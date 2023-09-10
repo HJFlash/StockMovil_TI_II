@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Inicio from './components/Inicio';
+import { StockFooter } from './components/StockFooter';
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <header className="App-fondo w-full">
         <Inicio/>
       </header>
+      <footer>
+        <StockFooter/>
+      </footer>
     </div>
   );
 }
