@@ -113,6 +113,10 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <div>
+        <p className={'text-[20px] m-0 text-sm font-semibold'}>Hola para no borrar lo creado por defecto escribiré este parrafo en este div</p>
+        <p>XD</p>
+      </div>
     </main>
   )
 }
