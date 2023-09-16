@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Footer from "../components/Footer"
-import "./globals.css"
+import "./styles/globals.css"
 
 export const metadata = {
   title: 'Next.js',
@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
+        <footer>
+          <Footer/>
+        </footer>
       </body>
-      <footer>
-        <Footer></Footer>
-      </footer>
     </html>
   )
 }

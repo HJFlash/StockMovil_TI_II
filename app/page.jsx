@@ -1,13 +1,12 @@
 import fondo from "../img/InicioFondo.png"
 import Link from "next/link"
 import Image from "next/image"
-import './App.css'
+import './styles/App.css'
 
 export default function LoginPage () {
-    return (
-        <body className="App-fondo w-full">
-          <main className='mx-auto font-sans font-bold container-i w-2/3'>
-            <div className=''>
+    return( 
+        <main className="App-fondo w-full">
+          <div className='mx-auto font-sans font-bold container-i w-2/3'>
               <div className='gradiantAzul lblanca grid grid-cols-2 py-20 rounded-[67px] justify-items-center'>
                 <div className='bg-black py-10 rounded-[67px] w-2/3 pl-9 pr-9'>
                   <h1 className='pl-4 text-2xl font-bold'>Inicio de sesión</h1>
@@ -34,8 +33,7 @@ export default function LoginPage () {
                   <Image src={fondo} alt="PaisajeFondo" className='rounded-l-[58px]'/>
                 </div>
               </div>
-            </div>
-          </main>
-        </body>
-    )
+          </div>
+        </main>  
+        ) 
 }
