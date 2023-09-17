@@ -1,15 +1,26 @@
 import {Schema,model,models} from 'mongoose'
 
-const taskSchema = new Schema({
-    title: {
-
+const EsquemaProducto = new Schema({
+    ID: {
+        type: String,
+        required: [true, 'ID requerida'],
+        unique: true,
+        trim: true
     },
-    description: {
-
+    Nombre: {
+        type: String,
+        required: [true, 'Nombre requerido'],
+        unique: true,
+        trim: true
+    },
+    Precio: {
+        type: Number,
+        required: [true, 'Nombre requerido'],
+        unique: true,
+        trim: true
     }
 }, {
     timestamps: true,
-    versionKey: false
 })
 
-export default model('Task', taskSchema)
+export default models.EsquemaProducto || model('Producto', EsquemaProducto);
