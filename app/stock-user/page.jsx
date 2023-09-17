@@ -1,3 +1,3 @@
 export default function StockUser(){
-    return <h1>usuario Stock</h1>
+    return <h1 className="text-black">Usuario Stock</h1>
 }

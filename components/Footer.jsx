@@ -1,7 +1,7 @@
 import Logo from "../img/logoStock.png"
 import Image from "next/image"
 
-export default function StockFooter (){
+const Footer = () => {
   return (
     <footer className="bg-black font-sans font-bold py-6 absolute bottom-0 w-full">
         
@@ -26,3 +26,5 @@ export default function StockFooter (){
     </footer>
   )
 }
+
+export default Footer
