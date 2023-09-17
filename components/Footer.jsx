@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function StockFooter (){
   return (
-    <footer className="bg-black font-sans font-bold py-6 absolute bottom-0 w-full text-white">
+    <footer className="bg-black font-sans font-bold py-6 absolute bottom-0 w-full">
         
         <div className="grid grid-cols-3 gap-4">
             <div className="col-span-1 p-4">

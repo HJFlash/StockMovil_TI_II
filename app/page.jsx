@@ -25,7 +25,7 @@ export default function LoginPage () {
                       <Link className='text-sm' href="./register">¿Olvido su contraseña?</Link>
                     </div>
                     <div className='grid justify-items-end pt-20'>
-                      <button className="btn azul rounded-full p-1 px-6 border">Iniciar Sesion</button>
+                      <Link className="btn azul rounded-full p-1 px-6 border" href="./stock-user">Iniciar Sesion</Link>
                     </div>
                   </div>
                 </div>
