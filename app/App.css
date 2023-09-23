@@ -27,3 +27,11 @@
     height: 100vh; /* Opcional para ocupar toda la altura de la ventana */
   }
 
+  .medio {
+    top: 50%;
+    transform: translateY(-50%);
+    }
+  .imgUs {
+      width: 290px;
+      height: 290px;
+    }

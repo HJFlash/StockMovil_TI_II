@@ -1,12 +1,12 @@
 import fondo from "../img/InicioFondo.png"
 import Link from "next/link"
 import Image from "next/image"
-import './App.css'
+//import './App.css'
 
 export default function LoginPage () {
     return (
-        <body className="App-fondo w-full">
-          <main className='mx-auto font-sans font-bold container-i w-2/3'>
+        <div className="App-fondo w-full">
+          <div className='mx-auto font-sans font-bold container-i w-2/3'>
             <div className=''>
               <div className='gradiantAzul lblanca grid grid-cols-2 py-20 rounded-[67px] justify-items-center'>
                 <div className='bg-black py-10 rounded-[67px] w-2/3 pl-9 pr-9'>
@@ -16,8 +16,8 @@ export default function LoginPage () {
                       <div className='py-4'>
                         <label className="label">
                         <span className="grid justify-items-start label-text">Usuario</span>
-                      </label>
-                      <input type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
+                        </label>
+                        <input type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
                       </div>        
                       <label className="label">
                       <span className="label-text">Contraseña</span>
@@ -35,7 +35,7 @@ export default function LoginPage () {
                 </div>
               </div>
             </div>
-          </main>
-        </body>
+          </div>
+        </div>
     )
 }
