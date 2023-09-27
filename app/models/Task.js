@@ -15,7 +15,7 @@ const EsquemaProducto = new Schema({
     },
     Precio: {
         type: Number,
-        required: [true, 'Nombre requerido'],
+        required: [true, 'Precio requerido'],
         unique: true,
         trim: true
     }
