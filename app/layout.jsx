@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={inter.className}>
         {children}
+        <footer>
+          <Footer/>
+        </footer>
       </body>
-      <footer>
-        <Footer></Footer>
-      </footer>
     </html>
   )
 }

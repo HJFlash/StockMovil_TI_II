@@ -1,14 +1,14 @@
 import Logo from "../img/logoStock.png"
 import Image from "next/image"
 
-export default function StockFooter (){
+const Footer = () => {
   return (
-    <footer className="bg-black font-sans font-bold py-6 absolute bottom-0 w-full text-white">
+    <footer className="bg-black font-sans font-bold py-6 absolute bottom-0 w-full">
         
-        <div class="grid grid-cols-3 gap-4">
-            <div class="col-span-1 p-4">
+        <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-1 p-4">
             </div>
-            <div class="col-span-1 p-4">
+            <div className="col-span-1 p-4">
                 <div className="bg-gray-300 rounded-full text-center">
                     <Image
                         src={Logo}
@@ -17,7 +17,7 @@ export default function StockFooter (){
                     />
                 </div>
             </div>
-            <div class="col-span-1 p-4 mx-auto flex items-center">
+            <div className="col-span-1 p-4 mx-auto flex items-center">
                 <div>
                     <p>© 2023 StockMovil. Todos los derechos reservados.</p>
                 </div>
@@ -26,3 +26,5 @@ export default function StockFooter (){
     </footer>
   )
 }
+
+export default Footer
