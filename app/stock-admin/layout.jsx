@@ -1,6 +1,6 @@
-import Navbar from "../../components/NavbarUser"
+import Navbar from "../../components/NavbarAdmin"
 
-export default function UserLayout({children}){
+export default function AdminLayout({children}){
     return (
         <>
             <nav>

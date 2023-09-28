@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Footer from "../components/Footer"
-import "./globals.css"
-import "./App.css"
+import "./styles/globals.css"
+import "./styles/App.css"
 
 export const metadata = {
   title: 'StockMovil',
@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={inter.className}>
         {children}
+        <footer>
+          <Footer/>
+        </footer>
       </body>
-      <footer>
-        <Footer></Footer>
-      </footer>
     </html>
   )
 }
