@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function NewUser () {
     return(
         <div className="w-full App-fondo">
-          <div className="flex items-center content-center justify-center w-2/3 h-screen mx-auto font-sans font-bold container-l">
+          <div className="flex items-center content-center justify-center mt-4 w-2/3 mx-auto font-sans font-bold container-l">
             <div className="">
               <div className="bg-black lblanca p-3 rounded-[67px] justify-items-center pl-20 border-[#0071E3]">
                 <h1 className="p-4 text-2xl">Editar usuario</h1>
