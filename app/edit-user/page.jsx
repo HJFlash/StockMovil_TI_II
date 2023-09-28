@@ -1,6 +1,5 @@
 import user from "../../img/User.png"
 import Image from "next/image"
-import Interruptor from "../../components/Interr"
 
 export default function NewUser () {
     return(
@@ -8,7 +7,7 @@ export default function NewUser () {
           <div className="flex items-center content-center justify-center w-2/3 h-screen mx-auto font-sans font-bold container-l">
             <div className="">
               <div className="bg-black lblanca p-3 rounded-[67px] justify-items-center pl-20 border-[#0071E3]">
-                <h1 className="p-4 text-2xl">Crear usuario</h1>
+                <h1 className="p-4 text-2xl">Editar usuario</h1>
                 <div className="grid grid-cols-2 text-lg">
                   <div className="p-5">
                     <div className="grid grid-cols-2 p-3">
@@ -56,7 +55,7 @@ export default function NewUser () {
                     <div className="grid grid-cols-2 p-3">
                       <div className="">
                         <h1>Fecha de nacimiento</h1>
-                        <input className="p-1 px-5 rounded-full azul" type="date" /> 
+                        <input className="p-1 px-5 rounded-full azul" type="date"/> 
                       </div>
                       <div>
                         <h1>Administrador</h1>
@@ -73,7 +72,7 @@ export default function NewUser () {
                       </div>
                     </div>
                     <div className='grid py-10 pt-10 pr-10 justify-items-end'>
-                        <button className="p-1 px-6 border rounded-full btn azul">Crear usuario</button>
+                        <button className="p-1 px-6 border rounded-full btn azul">Editar Usuario</button>
                     </div>
                   </div>
                 </div>
