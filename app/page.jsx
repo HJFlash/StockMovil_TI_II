@@ -15,8 +15,8 @@ export default function LoginPage () {
                       <div className='py-4'>
                         <label className="label">
                         <span className="grid justify-items-start label-text">Usuario</span>
-                      </label>
-                      <input type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
+                        </label>
+                        <input type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
                       </div>        
                       <label className="label">
                       <span className="label-text">Contraseña</span>
