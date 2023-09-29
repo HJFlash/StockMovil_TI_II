@@ -1,12 +1,12 @@
 export default function StockUser() {
     return (
-      <div className="overflow-x-auto ">
+      <div className="overflow-x-auto">
         <div className="mt-[5%] flex items-center justify-center font-sans font-bold overflow-hidden">
           <div className="w-full lg:w-5/6">
-            <div className="bg-white shadow-md my-6">
-              <table className="min-w-max w-full table-auto rounded-lg border border-gray-500">
+            <div className="bg-white shadow-md my-6 rounded-lg">
+              <table className="min-w-max w-full table-auto border border-gray-500 rounded-lg">
                 <thead>
-                  <tr className="bg-blue-500 text-white uppercase text-sm leading-normal ">
+                  <tr className="azul text-white uppercase text-sm leading-normal">
                     <th className="py-3 px-6 text-center">ID</th>
                     <th className="py-3 px-6 text-center">Producto</th>
                     <th className="py-3 px-6 text-center">Cantidad</th>

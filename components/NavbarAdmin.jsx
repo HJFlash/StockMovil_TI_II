@@ -8,7 +8,7 @@ const NavbarAdmin = () => {
                 <div className="bg-gray-300 w-[60%] grid grid-cols-6 gap-3 p-3 rounded-full">
                     <div className="col-span-2 relative">
                         <input 
-                            className="placeholder:italic placeholder:text-slate-300 w-full h-full box-border bg-blue-500 p-2 pl-9 border-solid border border-gray-600 rounded-full focus:outline-none focus:border-sky-500"
+                            className="placeholder:italic placeholder:text-slate-300 w-full h-full box-border azul p-2 pl-9 border-solid border border-gray-600 rounded-full focus:outline-none focus:border-sky-500"
                             placeholder="Search for a product ..."
                             type="text"
                             name="Search"  
@@ -18,7 +18,7 @@ const NavbarAdmin = () => {
                     <div></div>
                     <div></div>
                     <div></div>
-                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../new-user">
+                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../new-user">
                         Crear Usuario
                     </Link>
                 </div>
