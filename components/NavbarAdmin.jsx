@@ -1,8 +1,7 @@
-import Link from "next/link"
+import Link from 'next/link'
 import { FaMagnifyingGlass } from 'react-icons/fa6'
 
-
-const NavbarUser = () => {
+const NavbarAdmin = () => {
   return (
         <nav>
             <div className="bg-black font-sans font-bold py-10 top-0 w-full flex justify-center">
@@ -17,14 +16,10 @@ const NavbarUser = () => {
                         <div className="absolute left-3 top-[50%] translate-y-[-50%]"><FaMagnifyingGlass/></div>
                     </div>
                     <div></div>
-                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../stock-user">
-                        Inventario
-                    </Link>
-                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../stock-user/categories">
-                        Categorias
-                    </Link>
-                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../stock-user/edit-user">
-                        Editar Perfil
+                    <div></div>
+                    <div></div>
+                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="">
+                        Crear Usuario
                     </Link>
                 </div>
             </div>
@@ -32,4 +27,4 @@ const NavbarUser = () => {
   )
 }
 
-export default NavbarUser
+export default NavbarAdmin
