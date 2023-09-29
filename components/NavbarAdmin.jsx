@@ -18,7 +18,7 @@ const NavbarAdmin = () => {
                     <div></div>
                     <div></div>
                     <div></div>
-                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="">
+                    <Link className="bg-blue-500 p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../new-user">
                         Crear Usuario
                     </Link>
                 </div>
