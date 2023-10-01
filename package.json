@@ -1,5 +1,5 @@
 {
-  "name": "stockmovil",
+  "name": "authapp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "10.4.15",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
-    "mongodb": "^3.5.9",
-    "mongoose": "^7.5.1",
-    "next": "13.4.19",
-    "postcss": "8.4.29",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "autoprefixer": "10.4.14",
+    "bcryptjs": "^2.4.3",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "mongoose": "^7.4.1",
+    "next": "13.4.12",
+    "next-auth": "^4.22.3",
+    "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
