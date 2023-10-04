@@ -22,7 +22,7 @@ export default function LoginForm() {
       });
 
       if (res.error) {
-        setError("Credenciales Invalidas");
+        setError("Invalid Credentials");
         return;
       }
 
@@ -41,12 +41,12 @@ export default function LoginForm() {
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
-            placeholder="Correo Electronico"
+            placeholder="Email"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Contrasena"
+            placeholder="Contraseña"
           />
           <button className="bg-green-600 text-white font-bold cursor-pointer px-6 py-2">
             Login
@@ -58,7 +58,7 @@ export default function LoginForm() {
           )}
 
           <Link className="text-sm mt-3 text-right" href={"/register"}>
-            Olvidaste tu Contrasena? <span className="underline">Register</span>
+            No tienes una Cuenta? <span className="underline">Registro</span>
           </Link>
         </form>
       </div>

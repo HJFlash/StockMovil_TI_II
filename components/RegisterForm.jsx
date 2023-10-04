@@ -16,7 +16,7 @@ export default function RegisterForm() {
     e.preventDefault();
 
     if (!name || !email || !password) {
-      setError("All fields are necessary.");
+      setError("Todos los campos son nesesarios.");
       return;
     }
 
@@ -32,7 +32,7 @@ export default function RegisterForm() {
       const { user } = await resUserExists.json();
 
       if (user) {
-        setError("User already exists.");
+        setError("usuarios ya existe.");
         return;
       }
 
@@ -53,7 +53,7 @@ export default function RegisterForm() {
         form.reset();
         router.push("/");
       } else {
-        console.log("User registration failed.");
+        console.log("registro fallido.");
       }
     } catch (error) {
       console.log("Error durante el registro: ", error);
@@ -74,7 +74,7 @@ export default function RegisterForm() {
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
-            placeholder="Correo"
+            placeholder="Email"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
@@ -92,7 +92,7 @@ export default function RegisterForm() {
           )}
 
           <Link className="text-sm mt-3 text-right" href={"/"}>
-            Already have an account? <span className="underline">Login</span>
+            Ya tienes una cuenta? <span className="underline">Login</span>
           </Link>
         </form>
       </div>

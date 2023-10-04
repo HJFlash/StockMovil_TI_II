@@ -1,8 +1,8 @@
-import Navbar from "../../components/NavbarUser"
+import Navbar from "../../components/NavbarAdmin"
 import Logout from "../../components/Logout"
 import Link from "next/link"
 
-export default function UserLayout({children}){
+export default function AdminLayout({children}){
     return (
         <>
             <nav>

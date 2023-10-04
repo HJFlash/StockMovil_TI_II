@@ -1,10 +1,13 @@
     .App-fondo {
     background-color: #D9D9D9;
-    min-height: 100vh;
   }
   
   .azul {
     background-color: #0071E3;
+  }
+
+  .plomo {
+    background-color: #797979;
   }
 
   .gradiantAzul {
