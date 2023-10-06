@@ -1,1 +1,0 @@
-# StockMovil_TI_II
