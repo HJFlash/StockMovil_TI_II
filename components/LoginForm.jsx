@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import fondo from "../img/InicioFondo.png"
+import Image from "next/image"
+import '@/app/styles/App.css'
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -22,16 +25,52 @@ export default function LoginForm() {
       });
 
       if (res.error) {
-        setError("Invalid Credentials");
+        setError("Usuario invalido");
         return;
       }
 
-      router.replace("dashboard");
+      router.replace("stock-user");
     } catch (error) {
       console.log(error);
     }
   };
-
+  return (
+    <div className='gradiantAzul lblanca grid grid-cols-2 py-20 rounded-[67px] justify-items-center'>
+      <div className='bg-black py-10 rounded-[67px] w-2/3 pl-9 pr-9'>
+        <h1 className='pl-4 text-2xl font-bold'>Inicio de sesión</h1>
+        <form onSubmit={handleSubmit} className='p-4 text-lg'>
+          <div className='form-control p-2'> 
+            <div className='py-4'>
+              <label className="label">
+              <span className="grid justify-items-start label-text">Usuario</span>
+              </label>
+              <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
+            </div>        
+            <label className="label">
+            <span className="label-text">Contraseña</span>
+            </label>
+            <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Ingrese su contraseña" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
+            <Link className='text-sm' href="./register">¿Olvido su contraseña?</Link>
+          </div>
+          <div className='grid justify-items-end pt-20 my-3'>
+            <button className="btn azul rounded-full p-1 px-6 border hover:border-sky-500">
+              Iniciar Sesion
+            </button>
+            {error && (
+              <div className="bg-red-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
+                {error}
+              </div>
+            )}
+          </div>
+        </form>
+      </div>
+      <div className='columns-1'>
+        <Image src={fondo} alt="PaisajeFondo" className='rounded-l-[58px]'/>
+      </div>
+    </div>
+  );
+}
+  /*
   return (
     <div className="grid place-items-center h-screen">
       <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400">
@@ -65,3 +104,4 @@ export default function LoginForm() {
     </div>
   );
 }
+*/

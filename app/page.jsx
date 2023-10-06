@@ -9,10 +9,18 @@ import './styles/App.css'
 export default async function Home() {
   const session = await getServerSession(authOptions);
 
-  if (session) redirect("/dashboard");
-
+  if (session) redirect("/stock-user");
   return (
-<main className="App-fondo w-full">
+    <main className="App-fondo w-full">
+      <div className='mx-auto font-sans font-bold container-i w-2/3'>
+        <LoginForm></LoginForm>
+      </div>
+    </main>
+  );
+}
+/*
+  return (
+        <main className="App-fondo w-full">
           <div className='mx-auto font-sans font-bold container-i w-2/3'>
               <div className='gradiantAzul lblanca grid grid-cols-2 py-20 rounded-[67px] justify-items-center'>
                 <LoginForm></LoginForm>
@@ -24,3 +32,4 @@ export default async function Home() {
         </main>  
   );
 }
+*/
