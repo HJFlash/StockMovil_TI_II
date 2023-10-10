@@ -1,6 +1,19 @@
-import user from "../../img/User.png"
-import Image from "next/image"
+//import user from "../../img/User.png"
+//import Image from "next/image"
 
+import RegisterForm from "@/components/RegisterForm";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+
+export default async function NewUser() {
+  const session = await getServerSession(authOptions);
+
+  if (session) redirect("/stock-admin");
+
+  return <RegisterForm />;
+}
+/*
 export default function NewUser () {
     return(
         <div className="w-full App-fondo">
@@ -82,3 +95,4 @@ export default function NewUser () {
         </div>
     )
 }
+*/
