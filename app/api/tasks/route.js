@@ -1,16 +1,25 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/app/utils/mongoose";
-import EsqProducto from "@/app/models/Task"
+import EsqProducto from "@/app/models/Producto"
 
 export async function GET(request, {params}){
-    dbConnect()
+  dbConnect()
 
-    const productos = await EsqProducto.find()
-    return NextResponse.json({productos})
+  const productos = await EsqProducto.find()
+  return NextResponse.json({productos})
 }
 
-export function POST(){
-    return NextResponse.json({
-        message: 'Creando tareas ...'
-})
+export async function POST(request) {
+  try {
+      const data = await request.json();
+      const newProduct = new EsqProducto(data);
+      const savedProduct = await newProduct.save();
+      return NextResponse.json(savedProduct);
+
+  } catch (error) {
+    return NextResponse.json(NextResponse.json(error.message, {
+      status: 400
+    }));
+  }
 }
+

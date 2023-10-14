@@ -1,4 +1,14 @@
-export default function StockUser() {
+import { dbConnect } from "../utils/mongoose";
+import EsqProducto from "../models/Producto";
+
+async function loadProductos() {
+  dbConnect()
+  const prodcutos = await EsqProducto.find()
+  return prodcutos 
+}
+
+export default async function StockUser() {
+  const Productos = await loadProductos()
     return (
       <div className="overflow-x-auto">
         <div className="mt-[5%] flex items-center justify-center font-sans font-bold overflow-hidden">
@@ -16,14 +26,16 @@ export default function StockUser() {
                   </tr>
                 </thead>
                 <tbody className="text-black">
-                  <tr>
+                  {Productos.map(Producto => (
+                  <tr key={Producto._id}>
                     <td className="py-3 px-6 text-center">1</td>
-                    <td className="py-3 px-6 text-center">Producto A</td>
+                    <td className="py-3 px-6 text-center">{Producto.Nombre}</td>
                     <td className="py-3 px-6 text-center">10</td>
-                    <td className="py-3 px-6 text-center">$20.00</td>
+                    <td className="py-3 px-6 text-center">${Producto.Precio}</td>
                     <td className="py-3 px-6 text-center">Sí</td>
                     <td className="py-3 px-6 text-center">Tipo 1</td>
                   </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
