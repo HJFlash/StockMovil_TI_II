@@ -3,8 +3,8 @@ import EsqProducto from "../models/Producto";
 
 async function loadProductos() {
   dbConnect()
-  const prodcutos = await EsqProducto.find()
-  return prodcutos 
+  const productos = await EsqProducto.find()
+  return productos 
 }
 
 export default async function StockUser() {

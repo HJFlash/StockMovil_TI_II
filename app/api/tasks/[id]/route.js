@@ -5,18 +5,18 @@ import EsqProducto from "@/app/models/Producto"
 export async function GET(request, {params}){
     dbConnect()
 
-    const productosa = await EsqProducto.find()
-    return NextResponse.json({productosa})
+    const productos = await EsqProducto.find()
+    return NextResponse.json({productos})
 }
 
 export async function PUT(request, {params}) {
     try {
       const data = await request.json()
       console.log(data)
-      const ProdcutoActualizado = await EsqProducto.findByIdAndUpdate(params.id, data, {
+      const ProductoActualizado = await EsqProducto.findByIdAndUpdate(params.id, data, {
         new: true
       })
-      return NextResponse.json(ProdcutoActualizado)
+      return NextResponse.json(ProductoActualizado)
       
     } catch (error) {
       return NextResponse.json(error.message, {
