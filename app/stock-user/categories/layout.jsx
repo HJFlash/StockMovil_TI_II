@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Back from "../../../components/Back"
+import Back from "@/components/Back"
 
 export default function CateoriesLayout({children}){
     return(

@@ -1,12 +1,11 @@
-import Navbar from "../../components/NavbarUser"
-import Logout from "../../components/Logout"
-import Link from "next/link"
+import Navbar from "@/components/NavbarUser"
+import Logout from "@/components/Logout"
 
 export default function UserLayout({children}){
     return (
         <>
             <nav>
-                <Link href="../"><Logout/></Link>
+                <Logout/>
                 <Navbar/>
             </nav>
             <main>
