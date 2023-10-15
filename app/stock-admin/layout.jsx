@@ -6,7 +6,7 @@ export default function AdminLayout({children}){
     return (
         <>
             <nav>
-                <Link href="../"><Logout/></Link>
+                <Logout/>
                 <Navbar/>
             </nav>
             <main>

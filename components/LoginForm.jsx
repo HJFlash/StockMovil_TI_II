@@ -30,7 +30,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("stock-user");
+      router.replace("stock-admin");//stock-user
     } catch (error) {
       console.log(error);
     }

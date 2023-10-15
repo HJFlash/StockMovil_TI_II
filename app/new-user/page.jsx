@@ -9,9 +9,15 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 export default async function NewUser() {
   const session = await getServerSession(authOptions);
 
-  if (session) redirect("/stock-admin");
+  //if (session) redirect("/new-user");
 
-  return <RegisterForm />;
+  return (
+    <main className="w-full App-fondo">
+      <div className="flex items-center content-center justify-center mt-4 w-2/3 mx-auto font-sans font-bold container-l">
+        <RegisterForm></RegisterForm>
+      </div>
+    </main>
+  );
 }
 /*
 export default function NewUser () {
