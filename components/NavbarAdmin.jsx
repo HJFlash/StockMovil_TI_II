@@ -9,7 +9,7 @@ const NavbarAdmin = () => {
                     <div className="col-span-2 relative">
                         <input 
                             className="placeholder:italic placeholder:text-slate-300 w-full h-full box-border azul p-2 pl-9 border-solid border border-gray-600 rounded-full focus:outline-none focus:border-sky-500"
-                            placeholder="Search for a product ..."
+                            placeholder="Buscar ..."
                             type="text"
                             name="Search"  
                         />
