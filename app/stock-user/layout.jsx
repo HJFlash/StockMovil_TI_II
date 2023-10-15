@@ -1,5 +1,5 @@
-import Navbar from "../../components/NavbarUser"
-import Logout from "../../components/Logout"
+import Navbar from "@/components/NavbarUser"
+import Logout from "@/components/Logout"
 
 export default function UserLayout({children}){
     return (

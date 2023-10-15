@@ -9,8 +9,9 @@ import Image from "next/image"
 import '@/app/styles/App.css'
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
+  const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
+  const [administrador, setAdmin] = useState("");
   const [error, setError] = useState("");
 
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function LoginForm() {
 
     try {
       const res = await signIn("credentials", {
-        email,
+        usuario,
         password,
         redirect: false,
       });
@@ -29,7 +30,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("stock-user");
+      router.replace("stock-admin");//stock-user
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +45,7 @@ export default function LoginForm() {
               <label className="label">
               <span className="grid justify-items-start label-text">Usuario</span>
               </label>
-              <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
+              <input onChange={(e) => setUsuario(e.target.value)} type="text" placeholder="Ingresa tu nombre de usuario" className="input w-full max-w-xs rounded-full lnegra p-1 border-2 border-[#0071E3]" />
             </div>        
             <label className="label">
             <span className="label-text">Contraseña</span>
