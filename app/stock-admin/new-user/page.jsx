@@ -1,13 +1,32 @@
-import user from "../../img/User.png"
-import Image from "next/image"
+//import user from "../../img/User.png"
+//import Image from "next/image"
 
+import RegisterForm from "@/components/RegisterForm";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+
+export default async function NewUser() {
+  const session = await getServerSession(authOptions);
+
+  //if (session) redirect("/new-user");
+
+  return (
+    <main className="w-full App-fondo">
+      <div className="flex items-center content-center justify-center mt-4 w-2/3 mx-auto font-sans font-bold container-l">
+        <RegisterForm></RegisterForm>
+      </div>
+    </main>
+  );
+}
+/*
 export default function NewUser () {
     return(
         <div className="w-full App-fondo">
           <div className="flex items-center content-center justify-center mt-4 w-2/3 mx-auto font-sans font-bold container-l">
             <div className="">
               <div className="bg-black lblanca p-3 rounded-[67px] justify-items-center pl-20 border-2 border-[#0071E3]">
-                <h1 className="p-4 text-2xl">Editar usuario</h1>
+                <h1 className="p-4 text-2xl">Crear usuario</h1>
                 <div className="grid grid-cols-2 text-lg">
                   <div className="p-5">
                     <div className="grid grid-cols-2 p-3">
@@ -35,7 +54,7 @@ export default function NewUser () {
                         <label className="label">
                           <span className="grid pl-3 justify-items-start label-text">Numero de documento</span>
                         </label>
-                        <input type="text" placeholder="RUT" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 border-2 px-5 border-[#0071E3]" />                        
+                        <input type="text" placeholder="RUT" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" />                        
                       </div>
                       <div className="p-1">
                         <label className="label">
@@ -55,7 +74,7 @@ export default function NewUser () {
                     <div className="grid grid-cols-2 p-3">
                       <div className="">
                         <h1>Fecha de nacimiento</h1>
-                        <input className="p-1 px-5 focus:outline-none rounded-full azul" type="date"/> 
+                        <input className="p-1 px-5 focus:outline-none rounded-full azul" type="date" /> 
                       </div>
                       <div>
                         <h1>Administrador</h1>
@@ -72,7 +91,7 @@ export default function NewUser () {
                       </div>
                     </div>
                     <div className='grid py-10 pt-10 pr-10 justify-items-end'>
-                        <button className="p-1 px-6 border rounded-full btn azul hover:border-sky-500">Editar Usuario</button>
+                        <button className="p-1 px-6 border rounded-full btn azul hover:border-sky-500">Crear usuario</button>
                     </div>
                   </div>
                 </div>
@@ -82,3 +101,4 @@ export default function NewUser () {
         </div>
     )
 }
+*/
