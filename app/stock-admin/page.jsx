@@ -1,7 +1,16 @@
 import Link from "next/link";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { connectMongoDB } from "@/lib/mongodb";
+import Usuario from "@/models/user"
 
-export default function StockAdmin() {
+async function loadUsers() {
+  await connectMongoDB();
+  const usuarios = await Usuario.find()
+  return usuarios
+}
+
+export default async function StockAdmin() {
+    const Usuarios = await loadUsers()
     return (
 
       <div className="overflow-hidden rounded-lg m-[7%] border border-gray-500 shadow-md">
@@ -17,18 +26,20 @@ export default function StockAdmin() {
             </tr>
           </thead>
           <tbody className="text-black bg-white">
-            <tr>
-              <td className="py-3 px-6 text-center">user_10</td>
-              <td className="py-3 px-6 text-center">User</td>
-              <td className="py-3 px-6 text-center">11223344-5</td>
-              <td className="py-3 px-6 text-center">01/01/2000</td>
-              <td className="py-3 px-6 text-center">Sí</td>
-              <td className="py-3 px-6 text-center">user@gmail.com</td>
+            {Usuarios.map(Usuario => (
+            <tr className="border" key={Usuario._id}>
+              <td className="py-3 px-6 text-center">{Usuario.usuario}</td>
+              <td className="py-3 px-6 text-center">{Usuario.nombre} {Usuario.apellido}</td>
+              <td className="py-3 px-6 text-center">{Usuario.n_documento}</td>
+              <td className="py-3 px-6 text-center">{Usuario.fec_Nacimiento}</td>
+              <td className="py-3 px-6 text-center">{Usuario.administrador ? "Si­" : "No"}</td>
+              <td className="py-3 px-6 text-center">{Usuario.email}</td>
               <td className="text-center grid grid-cols-2">
                 <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900"><FiTrash2/></button>
                 <Link href="" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link>
               </td>
             </tr>
+          ))}
           </tbody>
         </table>
       </div>
