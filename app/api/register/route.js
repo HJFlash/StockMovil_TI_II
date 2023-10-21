@@ -1,20 +1,24 @@
-import { connectMongoDB } from "@/lib/mongodb";
-import User from "@/models/user";
 import { NextResponse } from "next/server";
-import bcrypt from "bcryptjs";
+import { dbConnect } from "@/app/utils/mongoose";
+import Ausuario from "@/app/models/Usuario"
 
-export async function POST(req) {
+export async function GET(request, {params}){
+  dbConnect()
+
+  const usuarios = await Ausuario.find()
+  return NextResponse.json({usuarios})
+}
+
+export async function POST(request) {
   try {
-    const { name, email, password } = await req.json();
-    const hashedPassword = await bcrypt.hash(password, 10);
-    await connectMongoDB();
-    await User.create({ name, email, password: hashedPassword });
+      const data = await request.json();
+      const newUser = new Ausuario(data);
+      const savedUser = await newUser.save();
+      return NextResponse.json(savedUser);
 
-    return NextResponse.json({ message: "usuario Registrado." }, { status: 201 });
   } catch (error) {
-    return NextResponse.json(
-      { message: "a ocurrido un error mientras se registraba." },
-      { status: 500 }
-    );
+    return NextResponse.json(NextResponse.json(error.message, {
+      status: 400
+    }));
   }
 }

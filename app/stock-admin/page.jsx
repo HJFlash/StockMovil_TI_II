@@ -1,4 +1,14 @@
-export default function StockAdmin() {
+import { dbConnect } from "../utils/mongoose"
+import Usuario from "../models/Usuario"
+
+async function loadUsers() {
+  dbConnect()
+  const usuarios = await Usuario.find()
+  return usuarios
+}
+
+export default async function StockAdmin() {
+  const Usuarios = await loadUsers()
     return (
       <div className="overflow-x-auto ">
         <div className="mt-[5%] flex items-center justify-center font-sans font-bold overflow-hidden">
@@ -16,14 +26,16 @@ export default function StockAdmin() {
                   </tr>
                 </thead>
                 <tbody className="text-black">
-                  <tr>
-                    <td className="py-3 px-6 text-center">user_10</td>
-                    <td className="py-3 px-6 text-center">User</td>
-                    <td className="py-3 px-6 text-center">11223344-5</td>
-                    <td className="py-3 px-6 text-center">01/01/2000</td>
-                    <td className="py-3 px-6 text-center">Sí</td>
-                    <td className="py-3 px-6 text-center">user@gmail.com</td>
+                  {Usuarios.map(Usuario => (
+                  <tr key={Usuario._id}>
+                    <td className="py-3 px-6 text-center">{Usuario.usuario}</td>
+                    <td className="py-3 px-6 text-center">{Usuario.nombre} {Usuario.apellido}</td>
+                    <td className="py-3 px-6 text-center">{Usuario.n_documento}</td>
+                    <td className="py-3 px-6 text-center">{Usuario.fec_Nacimiento}</td>
+                    <td className="py-3 px-6 text-center">{Usuario.administrador ? "Sí" : "No"}</td>
+                    <td className="py-3 px-6 text-center">{Usuario.email}</td>
                   </tr>
+                ))}
                 </tbody>
               </table>
             </div>

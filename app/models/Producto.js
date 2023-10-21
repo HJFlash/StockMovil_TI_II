@@ -26,8 +26,9 @@ const EsquemaProducto = new Schema({
         trim: true
     },
     Oferta: {
-        type: Boolean,
-        default: false
+        type: Number,
+        default: 0,
+        trim: true,
     },
     CodigoBarras: {
         type: Number,
@@ -39,4 +40,4 @@ const EsquemaProducto = new Schema({
     timestamps: true,
 })
 
-export default models.producto || model('producto', EsquemaProducto);
+export default models.Producto || model('Producto', EsquemaProducto);

@@ -1,56 +1,52 @@
-import {Schema,model,models} from 'mongoose'
+import {Schema,models,model} from "mongoose";
 
-const EsqUsuario = new Schema({
-    Usuario: {
-        type: String,
-        required: [true, "Nombre de Usuario requerido"],
-        unique: true,
-        trim: true
+const userSchema = new Schema(
+  {
+    usuario: {
+      type: String,
+      unique: true,
+      required: true,
     },
-    Nombre: {
-        type: String,
-        required: [true, "Nombre requerido"],
-        unique: true,
-        trim: true
+    nombre: {
+      type: String,
+      required: true,
     },
-    Apellido: {
-        type: String,
-        required: [true, "Apellido requerido"],
-        unique: true,
-        trim: true
+    apellido: {
+      type: String,
+      required: true,
     },
-    Nro_Documento: {
-        type: Number,
-        required: [true, "RUT requerido"],
-        unique: true,
-        trim: true
+    n_documento: {
+      type: String,
+      unique: true,
+      required: true,
     },
-    Email: {
-        type: String,
-        required: [true, "Correo Electronico requerido"],
-        unique: true,
-        trim: true
+    email: {
+      type: String,
+      unique: true,
+      required: true,
     },
-    Password: {
-        type: String,
-        required: [true, "Correo Electronico requerido"],
-        unique: true,
-        trim: true
+    password: {
+      type: String,
+      required: true,
     },
-    Fec_Nacimiento: {
-        type: String,//CAMBIAR
-        required: [true, "Fecha de nacimiento requerido"],
-        unique: true,
-        trim: true
+    fec_Nacimiento: {
+      type: String,
+      required: true,
     },
-    Admin: {
-        type: Boolean,
-        required: false,
-        unique: true,
-        trim: true
+    administrador: {
+      type: Boolean,
+      required: false,
     },
-}, {
-    timestamps: true,
-})
+  },
+  { timestamps: true }
+);
 
-export default models.Usuario || model("Usuario", EsqUsuario)
+userSchema.pre('save', function(next) {
+  //Antes de guardar el usuario, convertimos el campo de fecha a un formato especÃ­fico usando moment.js
+  if (this.fec_Nacimiento) {
+    this.fec_Nacimiento = moment(this.fec_Nacimiento, 'DD-MM-YYYY').toDate();
+  }
+  next();
+});
+
+export default models.EUsuario || model("EUsuario", userSchema);

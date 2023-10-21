@@ -13,10 +13,10 @@ export async function PUT(request, {params}) {
     try {
       const data = await request.json()
       console.log(data)
-      const ProdcutoActualizado = await EsqProducto.findByIdAndUpdate(params.id, data, {
+      const ProductoActualizado = await EsqProducto.findByIdAndUpdate(params.id, data, {
         new: true
       })
-      return NextResponse.json(ProdcutoActualizado)
+      return NextResponse.json(ProductoActualizado)
       
     } catch (error) {
       return NextResponse.json(error.message, {
