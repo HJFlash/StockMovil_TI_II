@@ -36,7 +36,7 @@ export default async function StockAdmin() {
               <td className="py-3 px-6 text-center">{Usuario.email}</td>
               <td className="text-center grid grid-cols-2">
                 <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900"><FiTrash2/></button>
-                <Link href="" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link>
+                <Link href="./stock-admin/edit-user" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link>
               </td>
             </tr>
           ))}
