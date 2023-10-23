@@ -36,9 +36,9 @@ export default async function StockUser() {
               <td className="py-3 px-6 text-center">{Producto.Cantidad}</td>
               <td className="py-3 px-6 text-center">${Producto.Precio}</td>
               <td className="py-3 px-6 text-center">{Producto.Oferta}%</td>
-                <Link href="./stock-user/edit_product" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link >
-                <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900 flex justify-self-end"><FiTrash2/></button >
               <td className="text-center grid grid-cols-2">
+                <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900 flex justify-self-end"><FiTrash2/></button >
+                <Link href="./stock-user/edit_product" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link >
               </td>
             </tr>
             ))}
