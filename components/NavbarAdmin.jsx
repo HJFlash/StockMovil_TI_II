@@ -18,7 +18,7 @@ const NavbarAdmin = () => {
                     <div></div>
                     <div></div>
                     <div></div>
-                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500" href="../stock-admin/new-user">
+                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:border-blue-500 duration-300" href="../stock-admin/new-user">
                         Crear Usuario
                     </Link>
                 </div>

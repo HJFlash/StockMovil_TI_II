@@ -1,11 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 
 const EsquemaProducto = new Schema({
-    ID: {
-        type: String,
+    CodigoBarras: {
+        type: Number,
         required: [true, 'ID requerido'],
-        unique: true,
-        trim: true,
+        unique: true
     },
     Nombre: {
         type: String,
@@ -29,13 +28,7 @@ const EsquemaProducto = new Schema({
         type: Number,
         default: 0,
         trim: true,
-    },
-    CodigoBarras: {
-        type: Number,
-        required: [true, '?'],
-        unique: true
     }
-
 }, {
     timestamps: true,
 })

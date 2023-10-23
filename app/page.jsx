@@ -2,9 +2,6 @@ import LoginForm from "@/components/LoginForm";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "./api/auth/[...nextauth]/route";
-import fondo from "../img/InicioFondo.png"
-import Link from "next/link"
-import Image from "next/image"
 import './styles/App.css'
 export default async function Home() {
   const session = await getServerSession(authOptions);

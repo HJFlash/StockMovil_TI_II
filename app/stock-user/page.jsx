@@ -22,7 +22,7 @@ export default async function StockUser() {
               <th className="py-3 px-6 text-center">Precio</th>
               <th className="py-3 px-6 text-center">Oferta</th>
               <th className="py-3 text-center">
-                <Link href="" className="bg-white text-blue-500 py-1 px-3 rounded-full text-center hover:border-sky-500 border-solid border border-gray-600">
+                <Link href="" className="bg-[#1BDA00] text-white py-1 px-3 rounded-full text-center border-solid border border-white transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300">
                   AGREGAR PRODUCTO
                 </Link>
               </th>

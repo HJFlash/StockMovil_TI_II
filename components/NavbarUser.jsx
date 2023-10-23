@@ -17,13 +17,13 @@ const NavbarUser = () => {
                         <div className="absolute left-3 top-[50%] translate-y-[-50%]"><FaMagnifyingGlass/></div>
                     </div>
                     <div></div>
-                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500 shadow-md" href="../stock-user">
+                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:border-blue-500 duration-300 shadow-md" href="../stock-user">
                         Inventario
                     </Link>
-                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500 shadow-md" href="../stock-user/categories">
+                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:border-blue-500 duration-300 shadow-md" href="../stock-user/categories">
                         Categorias
                     </Link>
-                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center hover:border-sky-500 shadow-md" href="../stock-user/edit-perfil">
+                    <Link className="azul p-2 border-solid border border-gray-600 rounded-full text-center transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:border-blue-500 duration-300 shadow-md" href="../stock-user/edit-perfil">
                         Editar Perfil
                     </Link>
                 </div>
