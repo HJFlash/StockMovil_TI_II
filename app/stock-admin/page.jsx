@@ -17,7 +17,7 @@ export default function StockAdmin() {
             </tr>
           </thead>
           <tbody className="text-black bg-white">
-            <tr>
+            <tr className="border">
               <td className="py-3 px-6 text-center">user_10</td>
               <td className="py-3 px-6 text-center">User</td>
               <td className="py-3 px-6 text-center">11223344-5</td>
@@ -26,9 +26,10 @@ export default function StockAdmin() {
               <td className="py-3 px-6 text-center">user@gmail.com</td>
               <td className="text-center grid grid-cols-2">
                 <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900"><FiTrash2/></button>
-                <Link href="" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link>
+                <Link href="./stock-admin/edit-user" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link>
               </td>
             </tr>
+            
           </tbody>
         </table>
       </div>
