@@ -15,19 +15,21 @@ const EsquemaProducto = new Schema({
     Cantidad: {
         type: Number,
         required: [true, 'Cantidad de productos requerida'],
-        unique: true,
+        default: 0,
         trim: true
     },
     Precio: {
         type: Number,
         required: [true, 'Precio requerido'],
-        unique: true,
         trim: true
     },
     Oferta: {
         type: Number,
         default: 0,
         trim: true,
+    },
+    Tipo_producto: {
+        type: String,
     }
 }, {
     timestamps: true,

@@ -13,12 +13,12 @@ export default async function StockAdmin() {
     const Usuarios = await loadUsers()
     return (
 
-      <div className="overflow-hidden rounded-lg m-[7%] border border-gray-500 shadow-md">
+      <div className="overflow-hidden rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
           <thead>
             <tr className="text-white uppercase">
               <th className="py-3 px-6 text-center">Nombre de Usuario</th>
-              <th className="py-3 px-6 text-center">Nombre</th>
+              <th className="py-3 px-6 text-center">Nombre Apellido</th>
               <th className="py-3 px-6 text-center">Numero de Documento</th>
               <th className="py-3 px-6 text-center">Fecha de Nacimiento</th>
               <th className="py-3 px-6 text-center">Administrador</th>

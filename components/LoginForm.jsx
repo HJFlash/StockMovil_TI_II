@@ -6,6 +6,8 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import fondo from "../img/InicioFondo.png"
 import Image from "next/image"
+import { AiOutlineUser } from "react-icons/ai";
+import { GiPadlock } from "react-icons/gi";
 import '@/app/styles/App.css'
 
 export default function LoginForm() {
@@ -45,22 +47,32 @@ export default function LoginForm() {
             <label className="label">
               <span className="grid justify-items-start label-text">Usuario</span>
             </label>
-            <input
-              onChange={(e) => setUsuario(e.target.value)}
-              type="text"
-              placeholder="Ingresa tu nombre de usuario"
-              className="input w-full max-w-xs sm:max-w-xs md:max-w-xs lg:max-w-md xl:max-w-md rounded-full text-black p-1 border-2 pl-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300"
-            />
+            <div className="flex transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300">
+              <div className="azul rounded-l-full px-2 pt-3 pl-3">
+              <AiOutlineUser/>
+              </div>
+              <input
+                onChange={(e) => setUsuario(e.target.value)}
+                type="text"
+                placeholder="Ingresa tu nombre de usuario"
+                className="input w-full max-w-xs sm:max-w-xs md:max-w-xs lg:max-w-md xl:max-w-md rounded-r-full text-black p-1 border-2 pl-2 border-[#0071E3] "
+              />
+            </div>
           </div>
           <label className="label">
             <span className="label-text">Contraseña</span>
           </label>
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Ingresa tu contraseña"
-            className="input w-full max-w-xs sm:max-w-xs md:max-w-xs lg:max-w-md xl:max-w-md rounded-full text-black p-1 border-2 pl-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300"
-          />
+          <div className="flex transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300">
+              <div className="azul rounded-l-full px-2 pt-3 pl-3">
+              <GiPadlock/>
+              </div>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              className="input w-full max-w-xs sm:max-w-xs md:max-w-xs lg:max-w-md xl:max-w-md rounded-r-full text-black p-1 border-2 pl-2 border-[#0071E3]"
+            />
+          </div>
           <Link className='text-sm' href="#">¿Olvidaste tu contraseña?</Link>
         </div>
         <div className='grid justify-items-end sm:pt-20 my-3'>
