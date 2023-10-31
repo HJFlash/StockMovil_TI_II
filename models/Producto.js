@@ -1,11 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 
 const EsquemaProducto = new Schema({
-    ID: {
-        type: String,
+    CodigoBarras: {
+        type: Number,
         required: [true, 'ID requerido'],
-        unique: true,
-        trim: true,
+        unique: true
     },
     Nombre: {
         type: String,
@@ -16,13 +15,12 @@ const EsquemaProducto = new Schema({
     Cantidad: {
         type: Number,
         required: [true, 'Cantidad de productos requerida'],
-        unique: true,
+        default: 0,
         trim: true
     },
     Precio: {
         type: Number,
         required: [true, 'Precio requerido'],
-        unique: true,
         trim: true
     },
     Oferta: {
@@ -30,12 +28,9 @@ const EsquemaProducto = new Schema({
         default: 0,
         trim: true,
     },
-    CodigoBarras: {
-        type: Number,
-        required: [true, '?'],
-        unique: true
+    Tipo_producto: {
+        type: String,
     }
-
 }, {
     timestamps: true,
 })

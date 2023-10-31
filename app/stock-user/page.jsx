@@ -12,7 +12,7 @@ async function loadProductos() {
 export default async function StockUser() {
   const Productos = await loadProductos()
     return (
-      <div className="overflow-hidden rounded-lg m-[7%] border border-gray-500 shadow-md">
+      <div className="overflow-hidden rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
           <thead>
             <tr className=" text-white uppercase">
@@ -20,9 +20,10 @@ export default async function StockUser() {
               <th className="py-3 px-6 text-center">Producto</th>
               <th className="py-3 px-6 text-center">Cantidad</th>
               <th className="py-3 px-6 text-center">Precio</th>
-              <th className="py-3 px-6 text-center">Oferta</th>
+              <th className="py-3 px-6 text-center">Oferta %</th>
+              <th className="py-3 px-6 text-center">Categoria</th>
               <th className="py-3 text-center">
-                <Link href="" className="bg-white text-blue-500 py-1 px-3 rounded-full text-center hover:border-sky-500 border-solid border border-gray-600">
+                <Link href="./stock-user/add_product" className="bg-[#1BDA00] text-white py-1 px-3 rounded-full text-center border-solid border border-white transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:bg-green-500 duration-300">
                   AGREGAR PRODUCTO
                 </Link>
               </th>
@@ -34,11 +35,12 @@ export default async function StockUser() {
               <td className="py-3 px-6 text-center">{Producto.CodigoBarras}</td>
               <td className="py-3 px-6 text-center">{Producto.Nombre}</td>
               <td className="py-3 px-6 text-center">{Producto.Cantidad}</td>
-              <td className="py-3 px-6 text-center">${Producto.Precio}</td>
+              <td className="py-3 px-6 text-center">$ {Producto.Precio}</td>
               <td className="py-3 px-6 text-center">{Producto.Oferta}%</td>
-              <td className="text-center">
-                <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900"><FiTrash2/></button >
-                <button className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></button >
+              <td className="py-3 px-6 text-center">{Producto.Tipo_producto}</td>
+              <td className="text-center grid grid-cols-2">
+                <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900 flex justify-self-end"><FiTrash2/></button >
+                <Link href="./stock-user/edit_product" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link >
               </td>
             </tr>
             ))}

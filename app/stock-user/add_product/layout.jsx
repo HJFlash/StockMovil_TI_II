@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Back from "../../../components/Back"
+import Back from "@/components/Back"
 
-export default function EditLayout({children}){
+export default function addPLayout({children}){
     return(
         <>
             <Link href="../../stock-user"><Back /></Link>

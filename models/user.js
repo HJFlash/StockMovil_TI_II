@@ -6,33 +6,33 @@ const userSchema = new Schema(
     usuario: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'Usuario requerido']
     },
     nombre: {
       type: String,
-      required: true,
+      required: [true, 'Nombre requerido']
     },
     apellido: {
       type: String,
-      required: true,
+      required: [true, 'Apellido requerido']
     },
     n_documento: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'Rut requerido']
     },
     email: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'Email requerido']
     },
     password: {
       type: String,
-      required: true,
+      required: [true, 'Contraseña requerida']
     },
     fec_Nacimiento: {
       type: String,
-      required: true,
+      required: [true, 'Fecha de nacimiento requerida']
     },
     administrador: {
       type: Boolean,
