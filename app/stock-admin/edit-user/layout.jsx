@@ -1,4 +1,3 @@
-import Navbar from "@/components/NavbarAdmin"
 import Back from "@/components/Back"
 import Link from "next/link"
 
