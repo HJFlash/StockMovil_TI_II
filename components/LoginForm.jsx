@@ -18,7 +18,6 @@ import { motion } from "framer-motion"
 export default function LoginForm() {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
-  const [administrador, setAdmin] = useState("");
   const [error, setError] = useState("");
 
   const { data: session} = useSession();
