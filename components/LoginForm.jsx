@@ -1,4 +1,5 @@
 "use client";
+import { redirect } from "next/navigation";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -9,6 +10,9 @@ import Image from "next/image"
 import { AiOutlineUser } from "react-icons/ai";
 import { GiPadlock } from "react-icons/gi";
 import '@/app/styles/App.css'
+import { useSession } from "next-auth/react"
+
+
 
 export default function LoginForm() {
   const [usuario, setUsuario] = useState("");
@@ -16,6 +20,7 @@ export default function LoginForm() {
   const [administrador, setAdmin] = useState("");
   const [error, setError] = useState("");
 
+  const { data: session} = useSession();
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +37,13 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("stock-user");//stock-user
+      if (session && session.user._doc.administrador) {
+        console.log("administrador");
+        router.replace("/stock-admin");
+      } else if (session && !session.user._doc.administrador) {
+        console.log("Usuario: ", session.user._doc.administrador);
+        router.replace("/stock-user");
+      }
     } catch (error) {
       console.log(error);
     }

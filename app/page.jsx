@@ -4,9 +4,7 @@ import { redirect } from "next/navigation";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import './styles/App.css'
 export default async function Home() {
-  const session = await getServerSession(authOptions);
-
-  if (session) redirect("/stock-admin");//stock-user
+  
   return (
     <main className="App-fondo w-full">
       <div className='mx-auto font-sans font-bold container-i w-2/3'>
