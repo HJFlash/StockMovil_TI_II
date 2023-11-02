@@ -8,8 +8,8 @@ export default async function Home() {
 
   if (session) redirect("/stock-admin");//stock-user
   return (
-    <main className="App-fondo w-full">
-      <div className='mx-auto font-sans font-bold container-i w-2/3'>
+    <main className="App-fondo w-full ">
+      <div className='mx-auto font-sans font-bold container-i w-2/3 '>
         <LoginForm></LoginForm>
       </div>
     </main>

@@ -9,6 +9,7 @@ import Image from "next/image"
 import { AiOutlineUser } from "react-icons/ai";
 import { GiPadlock } from "react-icons/gi";
 import '@/app/styles/App.css'
+import { motion } from "framer-motion"
 
 export default function LoginForm() {
   const [usuario, setUsuario] = useState("");
@@ -38,8 +39,21 @@ export default function LoginForm() {
     }
   };
   return (
-  <div className='gradiantAzul lblanca grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 py-20 rounded-[67px] justify-items-center'>
-    <div className='bg-black py-10 sm:py-10 md:py-10 lg:py-10 xl:py-10 rounded-[67px] w-full sm:w-2/3 sm:pl-9 sm:pr-9 md:w-2/3 md:pl-9 md:pr-9 lg:w-2/3 lg:pl-9 lg:pr-9 xl:w-2/3 xl:pl-9 xl:pr-9 shadow-lg'>
+  <div className='gradiantAzul lblanca grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 py-20 rounded-[67px] justify-items-center '>
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.3,
+        ease: [0, 0.71, 0.2, 1.01],
+        scale: {
+          type: "spring",
+          damping: 5,
+          stiffness: 100,
+          restDelta: 0.001
+        }
+      }}
+      className='bg-black py-10 sm:py-10 md:py-10 lg:py-10 xl:py-10 rounded-[67px] w-full sm:w-2/3 sm:pl-9 sm:pr-9 md:w-2/3 md:pl-9 md:pr-9 lg:w-2/3 lg:pl-9 lg:pr-9 xl:w-2/3 xl:pl-9 xl:pr-9 shadow-lg'>
       <h1 className='pl-4 text-2xl font-bold'>Inicio de sesión</h1>
       <form onSubmit={handleSubmit} className='p-4 text-lg'>
         <div className='form-control p-2'>
@@ -86,45 +100,10 @@ export default function LoginForm() {
           )}
         </div>
       </form>
-    </div>
+    </motion.div>
     <div className='hidden sm:block md:block lg:block xl:block'>
       <Image src={fondo} alt="PaisajeFondo" className='rounded-l-[58px] brightness-100 shadow-lg' />
     </div>
   </div>
   );
 }
-  /*
-  return (
-    <div className="grid place-items-center h-screen">
-      <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400">
-        <h1 className="text-xl font-bold my-4">Login</h1>
-
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder="Email"
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Contraseña"
-          />
-          <button className="bg-green-600 text-white font-bold cursor-pointer px-6 py-2">
-            Login
-          </button>
-          {error && (
-            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-              {error}
-            </div>
-          )}
-
-          <Link className="text-sm mt-3 text-right" href={"/register"}>
-            No tienes una Cuenta? <span className="underline">Registro</span>
-          </Link>
-        </form>
-      </div>
-    </div>
-  );
-}
-*/

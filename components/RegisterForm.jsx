@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import user from "@/img/User.png";
+import { motion } from "framer-motion"
 
 export default function RegisterForm() {
   const [error, setError] = useState(null);
@@ -24,6 +25,7 @@ export default function RegisterForm() {
       });
 
       if (response.ok) {
+        location.reload()
         // Procesa la respuesta exitosa
       } else {
         // Procesa la respuesta de error
@@ -37,7 +39,14 @@ export default function RegisterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-black lblanca p-3 rounded-[67px] justify-items-center pl-20 border-2 border-[#0071E3]">
+    <motion.form 
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+      onSubmit={handleSubmit} className="bg-black lblanca p-3 rounded-[67px] justify-items-center pl-20 border-2 border-[#0071E3]">
       <h1 className="p-4 text-2xl">Crear usuario</h1>
       <div className="grid grid-cols-2 text-lg">
         <div className="p-5">
@@ -45,13 +54,13 @@ export default function RegisterForm() {
             <div className="NOMBRE">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Nombre</span>
-                <input type="text" name="nombre" placeholder="Nombre" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="nombre" placeholder="Nombre" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
             <div className="APELLIDO">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Apellido</span>
-                <input type="text" name="apellido" placeholder="Apellido" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="apellido" placeholder="Apellido" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
           </div>
@@ -59,25 +68,25 @@ export default function RegisterForm() {
             <div className="p-1">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Nombre de usuario</span>
-                <input type="text" name="usuario" placeholder="Usuario" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="usuario" placeholder="Usuario" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
             <div className="p-1">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Numero de documento</span>
-                <input type="text" name="n_documento" placeholder="RUT" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="n_documento" placeholder="RUT" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
             <div className="p-1">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Email</span>
-                <input type="text" name="email" placeholder="Correo electrónico" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="email" placeholder="Correo electrónico" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
             <div className="p-1">
               <label className="label">
                 <span className="grid pl-3 justify-items-start label-text">Contraseña</span>
-                <input type="text" name="password" placeholder="Contraseña" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autocomplete="off"/>
+                <input type="text" name="password" placeholder="Contraseña" className="input w-full max-w-xs focus:outline-none rounded-full lnegra p-1 px-5 border-2 border-[#0071E3]" autoComplete="off"/>
               </label>
             </div>
           </div>
@@ -102,7 +111,7 @@ export default function RegisterForm() {
             </div>
           </div>
           <div className='grid py-10 pt-10 pr-10 justify-items-end'>
-            <button className="p-1 px-6 border rounded-full btn azul transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 duration-300">Crear usuario</button>
+            <button className="p-1 px-6 border rounded-full btn bg-[#0071E3] transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 duration-300">Crear usuario</button>
             {error && (
               <div className="bg-red-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
                 {error}
@@ -111,6 +120,6 @@ export default function RegisterForm() {
           </div>
         </div>
       </div>
-    </form>
+    </motion.form>
   );
 }
