@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className="bg-black font-sans font-bold py-6 fixed bottom-0 w-full">
         
-        <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-1 p-4">
+        <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-4">
+            <div className="col-span-1 p-4 max-sm:hidden">
             </div>
             <div className="col-span-1 p-4">
                 <div className="bg-gray-300 rounded-full text-center">
@@ -17,7 +17,7 @@ const Footer = () => {
                     />
                 </div>
             </div>
-            <div className="col-span-1 p-4 mx-auto flex items-center">
+            <div className="col-span-1 p-4 mx-auto flex items-center max-sm:hidden">
                 <div>
                     <p>© 2023 StockMovil. Todos los derechos reservados.</p>
                 </div>
