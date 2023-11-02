@@ -20,6 +20,7 @@ export default function RegisterForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          autorizacion: 'Bearer ' + localStorage.getItem('token'),
         },
         body: JSON.stringify(data),
       });
