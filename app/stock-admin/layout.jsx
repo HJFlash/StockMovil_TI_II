@@ -1,5 +1,5 @@
-import Navbar from "../../components/NavbarAdmin"
-import Logout from "../../components/Logout"
+import Navbar from "@/components/NavbarAdmin"
+import Logout from "@/components/Logout"
 
 export default function AdminLayout({children}){
     return (
