@@ -12,7 +12,7 @@ async function loadProductos() {
 export default async function StockUser() {
   const Productos = await loadProductos()
     return (
-      <div className="overflow-hidden rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
+      <div className="overflow-auto rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
           <thead>
             <tr className=" text-white uppercase">
