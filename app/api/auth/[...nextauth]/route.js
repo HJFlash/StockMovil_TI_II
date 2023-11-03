@@ -34,7 +34,7 @@ export const authOptions = {
       },
     }),
   ],
-  callbacks:{
+  callbacks:{//obtiene el objeto de la session
     async jwt ({token, user}) {
       return {...token, ...user};
   },

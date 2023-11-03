@@ -13,18 +13,3 @@ export default async function Home() {
     </main>
   );
 }
-/*
-  return (
-        <main className="App-fondo w-full">
-          <div className='mx-auto font-sans font-bold container-i w-2/3'>
-              <div className='gradiantAzul lblanca grid grid-cols-2 py-20 rounded-[67px] justify-items-center'>
-                <LoginForm></LoginForm>
-                <div className='columns-1'>
-                  <Image src={fondo} alt="PaisajeFondo" className='rounded-l-[58px]'/>
-                </div>
-              </div>
-          </div>
-        </main>  
-  );
-}
-*/
