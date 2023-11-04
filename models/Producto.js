@@ -3,7 +3,7 @@ import {Schema,model,models} from 'mongoose'
 const EsquemaProducto = new Schema({
     CodigoBarras: {
         type: Number,
-        required: [true, 'ID requerido'],
+        required: [true, 'Codigo de barras requerido'],
         unique: true
     },
     Nombre: {
@@ -16,6 +16,7 @@ const EsquemaProducto = new Schema({
         type: Number,
         required: [true, 'Cantidad de productos requerida'],
         default: 0,
+        unique: false,
         trim: true
     },
     Precio: {
@@ -24,6 +25,11 @@ const EsquemaProducto = new Schema({
         trim: true
     },
     Oferta: {
+        type: Number,
+        default: 0,
+        trim: true,
+    },
+    PrecioF: {
         type: Number,
         default: 0,
         trim: true,
