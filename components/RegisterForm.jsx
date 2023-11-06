@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import user from "@/img/User.png";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Suspense } from "react";
 
 export default function RegisterForm() {
   const [error, setError] = useState(null);
@@ -40,6 +41,7 @@ export default function RegisterForm() {
   }
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <motion.form 
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -122,5 +124,6 @@ export default function RegisterForm() {
         </div>
       </div>
     </motion.form>
+    </Suspense>
   );
 }

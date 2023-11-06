@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { connectMongoDB } from "@/lib/mongodb";
 import EsqProducto from "@/models/Producto";
+import { Suspense } from "react";
 
 async function loadProductos() {
   await connectMongoDB();
@@ -12,6 +13,7 @@ async function loadProductos() {
 export default async function StockUser() {
   const Productos = await loadProductos()
     return (
+      <Suspense fallback={<div>Loading...</div>}>
       <div className="overflow-auto rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
           <thead>
@@ -49,6 +51,7 @@ export default async function StockUser() {
           </tbody>
         </table>
       </div>              
+      </Suspense>
     );
   }
   
