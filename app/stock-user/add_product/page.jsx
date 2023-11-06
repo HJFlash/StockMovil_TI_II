@@ -43,19 +43,19 @@ export default function addproduct(){
                         <div className="pb-2 w-96">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Codigo de barras</span>
-                            <input type="number" name="CodigoBarras" min="0" placeholder="Ingresa Codigo de barras" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="CodigoBarras" min="0" placeholder="Ingresa Codigo de barras" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Nombre</span>
-                            <input type="text" name="Nombre" placeholder="Ingresa nombre de producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="text" name="Nombre" placeholder="Ingresa nombre de producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div>
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Cantidad</span>
-                            <input type="number" name="Cantidad" placeholder="Ingresa cantidad" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="Cantidad" placeholder="Ingresa cantidad" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                     </div>
@@ -63,13 +63,13 @@ export default function addproduct(){
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Precio</span>
-                            <input type="number" name="Precio" placeholder="Ingresa precio" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="Precio" placeholder="Ingresa precio" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Oferta</span>
-                            <input type="number" name="Oferta" placeholder="Ingresa oferta" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="Oferta" placeholder="Ingresa oferta" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div className="">
