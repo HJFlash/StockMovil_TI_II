@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function addproduct(){
+export default function Addproduct(){
     const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
