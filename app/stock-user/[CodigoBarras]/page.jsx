@@ -1,3 +1,5 @@
+"use client"
+
 export default function Editproduct(){
     return (
         <div className="App-fondo flex items-center content-center justify-center mt-[3%] mx-auto font-sans font-bold container-l">
@@ -8,19 +10,19 @@ export default function Editproduct(){
                         <div className="pb-2 w-96">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Codigo de barras</span>
-                            <input type="number" name="codigo_de_barras" min="0" placeholder="Ingresa Codigo de barras" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="codigo_de_barras" min="0" placeholder="Ingresa Codigo de barras" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off" defaultValue={12312}/>
                             </label>
                         </div>
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Nombre</span>
-                            <input type="text" name="nombre_producto" placeholder="Ingresa nombre de producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="text" name="nombre_producto" placeholder="Ingresa nombre de producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div>
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Cantidad</span>
-                            <input type="number" name="cantidad_producto" placeholder="Ingresa cantidad" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="cantidad_producto" placeholder="Ingresa cantidad" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                     </div>
@@ -28,17 +30,17 @@ export default function Editproduct(){
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Precio</span>
-                            <input type="number" name="precio" placeholder="Ingresa precio" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="precio" placeholder="Ingresa precio" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div className="pb-2">
                             <label className="label">
                             <span className="grid pl-3 justify-items-start label-text">Oferta</span>
-                            <input type="number" name="oferta" placeholder="Ingresa oferta" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autocomplete="off"/>
+                            <input type="number" name="oferta" placeholder="Ingresa oferta" min="0" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300" autoComplete="off"/>
                             </label>
                         </div>
                         <div className="">
-                            <label for="categoria">
+                            <label htmlFor="categoria">
                             <span className="grid pl-3 justify-items-start label-text">Categoria</span>
                             <input list="categorias" id="categoria" name="categoria" placeholder="Ingresa la categoria del producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300"/>
                             <datalist id="categorias">

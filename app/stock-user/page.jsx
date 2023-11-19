@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { FiEdit } from "react-icons/fi";
 import { connectMongoDB } from "@/lib/mongodb";
 import EsqProducto from "@/models/Producto";
+import Borrar from "@/components/BorrarBD"
 import { Suspense } from "react";
 
 async function loadProductos() {
@@ -43,8 +44,8 @@ export default async function StockUser() {
               <td className="py-3 px-6 text-center">$ {Producto.PrecioF}</td>
               <td className="py-3 px-6 text-center">{Producto.Tipo_producto}</td>
               <td className="text-center grid grid-cols-2">
-                <button className="py-3 px-3 text-[175%] text-red-500 hover:text-red-900 flex justify-self-end"><FiTrash2/></button >
-                <Link href="./stock-user/edit_product" className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link >
+                <Borrar ID={Producto._id.toHexString()} RUTA="Products"></Borrar>
+                <Link href={`./stock-user/${Producto.CodigoBarras}`} className="py-3 px-3 text-[175%] text-gray-500 hover:text-gray-900"><FiEdit/></Link >
               </td>
             </tr>
             ))}
