@@ -12,6 +12,11 @@ export async function POST(request) {
     }else{
       data.PrecioF = 0;
     }
+    if(data.Oferta != 0){
+      data.Oferta = data.Oferta;
+    }else{
+      data.Oferta = 0;
+    }
     const newProd = new Producto(data);
     const savedProd = await newProd.save();
     return NextResponse.json(savedProd);

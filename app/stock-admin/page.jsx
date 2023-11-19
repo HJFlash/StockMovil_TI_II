@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { connectMongoDB } from "@/lib/mongodb";
@@ -12,7 +13,6 @@ async function loadUsers() {
 export default async function StockAdmin() {
     const Usuarios = await loadUsers()
     return (
-
       <div className="overflow-hidden rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
           <thead>

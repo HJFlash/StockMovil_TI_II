@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 export default function RegisterForm() {
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +25,8 @@ export default function RegisterForm() {
         },
         body: JSON.stringify(data),
       });
-
       if (response.ok) {
+        setSuccessMessage("Se ha creado el usuario correctamente");
         location.reload()
         // Procesa la respuesta exitosa
       } else {
@@ -36,6 +37,7 @@ export default function RegisterForm() {
     } catch (error) {
       console.error(error);
       setError('Ocurrió un error al enviar el formulario.');
+      setSuccessMessage(""); //Limpia en caso de que haya un error anteriormente
     }
   }
 
@@ -117,6 +119,11 @@ export default function RegisterForm() {
               <div className="bg-red-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
                 {error}
               </div>
+            )}
+            {successMessage && (
+            <div className="bg-green-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
+              {successMessage}
+            </div>
             )}
           </div>
         </div>
