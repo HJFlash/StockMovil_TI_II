@@ -2,6 +2,13 @@ import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import Producto from "@/models/Producto";
 
+export async function GET(request, {params}){
+  await connectMongoDB()
+
+  const productos = await Producto.find()
+  return NextResponse.json({productos})
+}
+
 export async function POST(request) {
   try {
     await connectMongoDB();
@@ -19,3 +26,4 @@ export async function POST(request) {
     return NextResponse.json({ error: error.message }, { status: 400 });
   }
 }
+
