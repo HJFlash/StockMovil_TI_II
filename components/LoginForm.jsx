@@ -1,5 +1,5 @@
 "use client";
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -13,12 +13,11 @@ import '@/app/styles/App.css'
 import { useSession } from "next-auth/react"
 import { motion } from "framer-motion"
 
-
-
 export default function LoginForm() {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const { data: session} = useSession();
   const router = useRouter();
@@ -34,15 +33,17 @@ export default function LoginForm() {
 
       if (res.error) {
         setError("Usuario invalido");
+        setSuccessMessage(""); //Limpia en caso de que haya un error anteriormente
         return;
       }
-
       if (session && session.user._doc.administrador) {//redireccionamiento
         //console.log("administrador");
         router.replace("/stock-admin");
+        setSuccessMessage("Se ha iniciado sesión correctamente");
       } else if (session && !session.user._doc.administrador) {
         //console.log("Usuario: ", session.user._doc.administrador);
         router.replace("/stock-user");
+        setSuccessMessage("Se ha iniciado sesión correctamente");
       }
     } catch (error) {
       console.log(error);
@@ -101,11 +102,16 @@ export default function LoginForm() {
         </div>
         <div className='grid justify-items-end my-3'>
           <button className="btn azul rounded-full p-1 px-6 border transition-transform transform translate-y-0 hover:scale-110 hover:bg-sky-500 duration-300">
-            Iniciar Sesión
+          Iniciar Sesión
           </button>
           {error && (
             <div className="bg-red-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
               {error}
+            </div>
+          )}
+          {successMessage && (
+            <div className="bg-green-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
+              {successMessage}
             </div>
           )}
         </div>

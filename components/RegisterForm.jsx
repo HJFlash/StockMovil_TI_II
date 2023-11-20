@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import user from "@/img/User.png";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Suspense } from "react";
 
 export default function RegisterForm() {
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export default function RegisterForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('/api/register', { // Actualiza la ruta del controlador
+      const response = await fetch('/api/Users', { // Actualiza la ruta del controlador
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,8 +26,8 @@ export default function RegisterForm() {
         },
         body: JSON.stringify(data),
       });
-
       if (response.ok) {
+        setSuccessMessage("Se ha creado el usuario correctamente");
         location.reload()
         // Procesa la respuesta exitosa
       } else {
@@ -36,10 +38,12 @@ export default function RegisterForm() {
     } catch (error) {
       console.error(error);
       setError('Ocurrió un error al enviar el formulario.');
+      setSuccessMessage(""); //Limpia en caso de que haya un error anteriormente
     }
   }
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <motion.form 
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -118,9 +122,15 @@ export default function RegisterForm() {
                 {error}
               </div>
             )}
+            {successMessage && (
+            <div className="bg-green-500 fixed text-white w-fit text-sm py-1 px-3 rounded-md mt-12">
+              {successMessage}
+            </div>
+            )}
           </div>
         </div>
       </div>
     </motion.form>
+    </Suspense>
   );
 }

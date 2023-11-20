@@ -2,6 +2,13 @@ import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import Producto from "@/models/Producto";
 
+export async function GET(request, {params}){
+  await connectMongoDB()
+
+  const productos = await Producto.find()
+  return NextResponse.json({productos})
+}
+
 export async function POST(request) {
   try {
     await connectMongoDB();
@@ -12,6 +19,11 @@ export async function POST(request) {
     }else{
       data.PrecioF = 0;
     }
+    if(data.Oferta != 0){
+      data.Oferta = data.Oferta;
+    }else{
+      data.Oferta = 0;
+    }
     const newProd = new Producto(data);
     const savedProd = await newProd.save();
     return NextResponse.json(savedProd);
@@ -19,3 +31,4 @@ export async function POST(request) {
     return NextResponse.json({ error: error.message }, { status: 400 });
   }
 }
+
