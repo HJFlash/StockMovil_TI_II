@@ -16,7 +16,7 @@ export default function RegisterForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('/api/register', { // Actualiza la ruta del controlador
+      const response = await fetch('/api/Users', { // Actualiza la ruta del controlador
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
