@@ -21,9 +21,9 @@ export const authOptions = {
           if (!user) {
             return null;
           }
-          //const passwordsMatch = await bcrypt.compare(password, user.password);
-
-          if (password != user.password) {
+          const passwordsMatch = await bcrypt.compare(password, user.password);
+          console.log("aqui",passwordsMatch)
+          if (passwordsMatch === false) {
             return null;
           }
 
