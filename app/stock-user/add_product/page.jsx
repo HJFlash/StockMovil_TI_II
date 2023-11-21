@@ -15,7 +15,7 @@ export default function Addproduct(){
       const data = Object.fromEntries(formData.entries());
   
       try {
-        const response = await fetch('/api/newproduct', { // Actualiza la ruta del controlador
+        const response = await fetch('/api/Products', { // Actualiza la ruta del controlador
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ export default function Addproduct(){
                             </label>
                         </div>
                         <div className="">
-                            <label for="categoria">
+                            <label htmlFor="categoria">
                             <span className="grid pl-3 justify-items-start label-text">Categoria</span>
                             <input list="categorias" id="categoria" name="Tipo_producto" placeholder="Ingresa la categoria del producto" className="input w-4/5 max-w-xs focus:outline-none rounded-full lnegra p-1 py-1.5 px-5 border-2 border-[#0071E3] transition-transform transform translate-y-0 hover:scale-110 hover:border-sky-500 duration-300"/>
                             <datalist id="categorias">

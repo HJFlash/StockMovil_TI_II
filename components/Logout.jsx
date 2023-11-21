@@ -5,7 +5,7 @@ import { signOut } from "next-auth/react";
 export default function Logout() {
   const handleLogout = () => {
     if (window.confirm("¿Estás seguro de que deseas cerrar sesión?")) {
-      signOut( { callbackUrl: 'http://localhost:3000/' });
+      signOut({ callbackUrl: 'http://localhost:3000' });
     }
   };
 
