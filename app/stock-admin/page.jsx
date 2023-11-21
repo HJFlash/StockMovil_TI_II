@@ -1,17 +1,29 @@
+"use client";
 
-import Link from "next/link";
+import { useEffect, useState } from 'react';
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { connectMongoDB } from "@/lib/mongodb";
-import Usuario from "@/models/user"
+import Usuario from "@/models/user";
 
-async function loadUsers() {
-  await connectMongoDB();
-  const usuarios = await Usuario.find()
-  return usuarios
-}
+export default function StockAdmin({ searchValue }) {
+  const [usuarios, setUsuarios] = useState([]);
 
-export default async function StockAdmin() {
-    const Usuarios = await loadUsers()
+  useEffect(() => {
+    const loadUsers = async () => {
+      await connectMongoDB();
+      const loadedUsuarios = await Usuario.find();
+
+      // Filtra la lista de usuarios según el valor de búsqueda
+      const filteredUsuarios = loadedUsuarios.filter((usuario) =>
+        usuario.nombre.toLowerCase().includes(searchValue.toLowerCase())
+      );
+
+      setUsuarios(filteredUsuarios);
+    };
+
+    loadUsers();
+  }, [searchValue]); // Ejecuta la carga de usuarios cuando cambie el valor de búsqueda
+
     return (
       <div className="overflow-hidden rounded-lg m-[7%] mt-[4%] border border-gray-500 shadow-md">
         <table className="w-full text-left text-sm azul">
@@ -26,7 +38,7 @@ export default async function StockAdmin() {
             </tr>
           </thead>
           <tbody className="text-black bg-white">
-            {Usuarios.map(Usuario => (
+            {usuarios.map(Usuario => (
             <tr className="border" key={Usuario._id}>
               <td className="py-3 px-6 text-center">{Usuario.usuario}</td>
               <td className="py-3 px-6 text-center">{Usuario.nombre} {Usuario.apellido}</td>

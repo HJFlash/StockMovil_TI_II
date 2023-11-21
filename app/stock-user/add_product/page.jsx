@@ -27,6 +27,7 @@ export default function Addproduct(){
             setSuccessMessage("Se ha añadido el producto correctamente");
             location.reload()
           // Procesa la respuesta exitosa
+          location.reload()
         } else {
           // Procesa la respuesta de error
           const errorData = await response.json();
